@@ -1,0 +1,15 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option java_package = "com.example.grpc.proto";
+
+message HotelRequest {
+  int32 days = 1;
+}
+
+message HotelResponse {
+  double price = 1;
+}
+
+service HotelService {
+  rpc BookHotel (HotelRequest) returns (HotelResponse);
+}

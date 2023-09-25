@@ -1,0 +1,15 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option java_package = "com.example.grpc.proto";
+
+message FlightRequest {
+  int32 distance = 1;
+}
+
+message FlightResponse {
+  double price = 1;
+}
+
+service FlightService {
+  rpc BookFlight (FlightRequest) returns (FlightResponse);
+}
